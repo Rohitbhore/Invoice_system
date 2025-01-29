@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Your CSS styles here */
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div style="text-align:center">
+    <h1>"Contact Us"</h1>
+    <p>Swing by for a cup of coffee, or leave us a message:</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="contact.jpg" style="width:100%">
+    </div>
+    <div class="column">
+      <form action="/action_page.php" id="contactForm"> <!-- Add an id to the form -->
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <!-- Options here -->
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+      <div id="thankYouMessage" style="display: none;"> <!-- Add a hidden "Thank you" message div -->
+        <p>Thank you for your message!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add JavaScript to display the "Thank you" message -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+  // Prevent the form from actually submitting
+  event.preventDefault();
+
+  // Show the "Thank you" message
+  document.getElementById("thankYouMessage").style.display = "block";
+
+  // You can also reset the form if needed
+  this.reset();
+});
+</script>
+</body>
+</html>
